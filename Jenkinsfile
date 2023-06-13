@@ -14,7 +14,7 @@ pipeline {
 
         stage('prepare') {
             steps {
-                sh "ansible-vault decrypt --vault-id /tmp/vault_id new_key.pem"
+                sh "ansible-vault decrypt --vault-id /tmp/vault-id new_key.pem"
                 sh "chmod 400 demo.pem"
                 sh "ansible-playbook -i inventory fullstack-deploy.yml"
             }
