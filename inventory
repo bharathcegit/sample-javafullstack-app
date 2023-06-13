@@ -3,7 +3,7 @@
 
 [deploy]
 
-deploy-server    ansible_host=3.88.177.174  ansible_port=22     ansible_user=ubuntu     ansible_ssh_private_key_file="/opt/jenkins/workspace/VisOps/t056/sample-fullstack-app/web-application/demo.pem"
+deploy-server    ansible_host=3.88.177.174  ansible_port=22     ansible_user=ubuntu     ansible_ssh_private_key_file="/opt/jenkins/workspace/VisOps/t054/sample-javafullstack-app/web-application/new_key.pem"
 
 
 
