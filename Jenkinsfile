@@ -1,20 +1,20 @@
 pipeline {
     agent {
         node {
-            label 't056-runner'
+            label 't054-runner'
         }
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'ca-git-access', branch: 'development', url: "https://git.cloudavise.com/visops/t056/sample-fullstack-app.git"
+                git credentialsId: 'ca-git-access', branch: 'devp', url: "https://git.cloudavise.com/visops/t054/sample-javafullstack-app.git"
             }
         }
 
         stage('prepare') {
             steps {
-                sh "ansible-vault decrypt --vault-id /tmp/vault_id demo.pem"
+                sh "ansible-vault decrypt --vault-id /tmp/vault_id new_key.pem"
                 sh "chmod 400 demo.pem"
                 sh "ansible-playbook -i inventory fullstack-deploy.yml"
             }

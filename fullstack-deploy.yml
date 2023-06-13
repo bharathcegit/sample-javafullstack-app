@@ -7,7 +7,7 @@
   tasks:
     - name: Copy repository
       copy:
-        src: /opt/jenkins/workspace/VisOps/t056/sample-fullstack-app/web-application
+        src: /opt/jenkins/workspace/VisOps/t054/sample-javafullstack-app/web-application
         dest: /home/ubuntu/
 
     - name: script

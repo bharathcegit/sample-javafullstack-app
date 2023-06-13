@@ -58,3 +58,4 @@ sleep 10
 
 # Create the database "themoviedb"
 sudo docker exec postgres-db psql -U postgres -c "CREATE DATABASE themoviedb;"
+
