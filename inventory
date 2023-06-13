@@ -1,0 +1,12 @@
+; -*-mode: ansible; coding: utf-8;-*-
+
+
+[deploy]
+
+deploy-server    ansible_host=3.88.177.174  ansible_port=22     ansible_user=ubuntu     ansible_ssh_private_key_file="/opt/jenkins/workspace/VisOps/t056/sample-fullstack-app/web-application/demo.pem"
+
+
+
+
+[all:vars]
+ansible_ssh_pipelining=no

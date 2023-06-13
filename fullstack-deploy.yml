@@ -1,0 +1,36 @@
+---
+- name: Jenkins Playbook
+  hosts: deploy
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Copy repository
+      copy:
+        src: /opt/jenkins/workspace/VisOps/t056/sample-fullstack-app/web-application
+        dest: /home/ubuntu/
+
+    - name: script
+      shell: chmod +x script.sh
+      args:
+        chdir: /home/ubuntu/web-application/
+
+    - name: Install Dependencies
+      shell: sudo ./script.sh
+      args:
+        chdir: /home/ubuntu/web-application/
+
+    - name: Build Artifact
+      shell: mvn clean package
+      args:
+        chdir: /home/ubuntu/web-application/backend/
+
+    - name: Sleep for 3 minutes
+      pause:
+        seconds: 180
+        prompt: "Sleeping for 3 minutes..."
+
+    - name: Docker Compose Up
+      shell: docker-compose up -d
+      args:
+        chdir: /home/ubuntu/web-application/
